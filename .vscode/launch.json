@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "al",
+            "request": "launch",
+            "name": "Your own server",
+            "server": "http://10.239.207.70:9205/",
+            "serverInstance": "seth_E_forCARE_140",
+            "authentication":"Windows",
+            "startupObjectId": 50100,
+            "startupObjectType": "Page",
+            "breakOnError": true,
+            "launchBrowser": true,
+            "port": 9139
+        }
+    ]
+}
