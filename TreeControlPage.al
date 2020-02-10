@@ -27,6 +27,10 @@ page 50100 TreeControlPage
             {
 
             }
+            part(MySub; MyClientSubPage)
+            {
+                ApplicationArea = All;
+            }
 
         }
 
@@ -67,10 +71,17 @@ page 50100 TreeControlPage
 
     trigger OnOpenPage()
     begin
+        KMOrgStrTreewContent.InitTreeWithStructureContent(KMOrgStructureTreeTmp, TRUE, TRUE, TODAY, TODAY, USERID, 0);
+    end;
 
+    trigger OnAfterGetRecord()
+    begin
+        CurrPage.MySub.PAGE.SetClientFilterForOrgStrTreeElement(KMOrgStructureTreeTmp);
     end;
 
     var
+        KMOrgStrTreewContent: Codeunit "KM Org.-Str. Tree w. Content";
+        KMOrgStructureTreeTmp: Record "KM Org.-Structure Tree" temporary;
         myInt: Integer;
 
 }
