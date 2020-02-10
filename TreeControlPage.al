@@ -17,13 +17,22 @@ page 50100 TreeControlPage
                 begin
                     myInt := i;
                 end;
+
+                trigger ScriptLoaded()
+                begin
+                    CurrPage.ControlName.myRun('[{"entryNo": 1, "description": "Deutschland", "parentEntryNo": 0},{"entryNo": 2, "description": "Niedersachsen", "parentEntryNo": 1},{"entryNo": 3, "description": "Hannover", "parentEntryNo": 2},{"entryNo": 9, "description": "Bothfeld", "parentEntryNo": 3},{"entryNo": 10, "description": "Lahe", "parentEntryNo": 3},{"entryNo": 11, "description": "Mitte", "parentEntryNo": 3},{"entryNo": 4, "description": "Braunschweig", "parentEntryNo": 2},{"entryNo": 5, "description": "Nordrhein Westfalen", "parentEntryNo": 1},{"entryNo": 6, "description": "Dortmund", "parentEntryNo": 5},{"entryNo": 7, "description": "Köln", "parentEntryNo": 5},{"entryNo": 8, "description": "Sachsen", "parentEntryNo": 1}]');
+                end;
             }
             field(SelectedId; myInt)
             {
 
             }
+
         }
+
     }
+
+
 
     actions
     {
@@ -50,11 +59,16 @@ page 50100 TreeControlPage
                 PromotedCategory = Process;
                 trigger OnAction();
                 begin
-                    CurrPage.ControlName.setTreeControl('[ {"entryNo": 1, "description": "Deutschland1", "parentEntryNo": 0}, {"entryNo": 2, "description": "Niedersachsen1", "parentEntryNo": 1}, {"entryNo": 3, "description": "Hannover1", "parentEntryNo": 2}]');
+                    CurrPage.ControlName.myRun('[{"entryNo": 1, "description": "Land", "parentEntryNo": 0},{"entryNo": 2, "description": "Region", "parentEntryNo": 1},{"entryNo": 3, "description": "Stadt", "parentEntryNo": 2}]');
                 end;
             }
         }
     }
+
+    trigger OnOpenPage()
+    begin
+
+    end;
 
     var
         myInt: Integer;
