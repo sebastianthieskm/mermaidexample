@@ -41,6 +41,9 @@ function myRun() {
 function setTreeControl(inputText : string) :void {        
     //hier wird der tree aufgebaut
     let myBody = <HTMLDivElement>document.getElementById('controlAddIn');
+    myBody.childNodes.forEach(myBodyChild => {
+        myBody.removeChild(myBodyChild);
+    });
     let myNewTree: MyTree[];
     if (inputText === ''){
         myNewTree = JSON.parse('[ \
