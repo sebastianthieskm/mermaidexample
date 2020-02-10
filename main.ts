@@ -39,6 +39,7 @@ function myRun() {
 }      
    
 function setTreeControl(inputText : string) :void {        
+    //hier wird der tree aufgebaut
     let myBody = <HTMLDivElement>document.getElementById('controlAddIn');
     let myNewTree: MyTree[];
     if (inputText === ''){
