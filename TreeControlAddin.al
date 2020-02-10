@@ -25,6 +25,6 @@ controladdin TreeControlAddin
     event TreeItemClicked(i: Integer)
     event ScriptLoaded()
     procedure showTextFromNav2(iT: Text)
-    procedure setTreeControl(jsonText: Text)
+    procedure myRun(jsonText: Text)
 
 }
