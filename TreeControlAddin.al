@@ -23,6 +23,7 @@ controladdin TreeControlAddin
         'image2.png';
     */
     event TreeItemClicked(i: Integer)
+    event ScriptLoaded()
     procedure showTextFromNav2(iT: Text)
     procedure setTreeControl(jsonText: Text)
 
