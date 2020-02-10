@@ -113,3 +113,6 @@ function showTextFromNav2(inputText : string) {
     let myAddin2 = <HTMLDivElement>document.getElementById("controlAddIn");
     myAddin2.innerHTML = inputText;
 }
+
+// @ts-ignore: NAV Invoke
+Microsoft.Dynamics.NAV.InvokeExtensibilityMethod('ScriptLoaded');
