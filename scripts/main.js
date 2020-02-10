@@ -1,7 +1,8 @@
 "use strict";
 var myNumber = 0;
-function myRun() {
-    setTreeControl('');
+//hier gehts los
+function myRun(inputText) {
+    setTreeControl(inputText);
     var toggler = document.getElementsByClassName("caret");
     var i = 0;
     for (var i_1 = 0; i_1 < toggler.length; i_1++) {
@@ -29,22 +30,14 @@ function myRun() {
     }
 }
 function setTreeControl(inputText) {
+    //hier wird der tree aufgebaut
     var myBody = document.getElementById('controlAddIn');
+    myBody.childNodes.forEach(function (myBodyChild) {
+        myBody.removeChild(myBodyChild);
+    });
     var myNewTree;
     if (inputText === '') {
-        myNewTree = JSON.parse('[ \
-            {"entryNo": 1, "description": "Deutschland", "parentEntryNo": 0}, \
-                {"entryNo": 2, "description": "Niedersachsen", "parentEntryNo": 1}, \
-                    {"entryNo": 3, "description": "Hannover", "parentEntryNo": 2}, \
-                        {"entryNo": 9, "description": "Bothfeld", "parentEntryNo": 3}, \
-                        {"entryNo": 10, "description": "Lahe", "parentEntryNo": 3}, \
-                        {"entryNo": 11, "description": "Mitte", "parentEntryNo": 3}, \
-                    {"entryNo": 4, "description": "Braunschweig", "parentEntryNo": 2}, \
-                {"entryNo": 5, "description": "Nordrhein Westfalen", "parentEntryNo": 1}, \
-                    {"entryNo": 6, "description": "Dortmund", "parentEntryNo": 5}, \
-                    {"entryNo": 7, "description": "Köln", "parentEntryNo": 5}, \
-                {"entryNo": 8, "description": "Sachsen", "parentEntryNo": 1} \
-            ]');
+        throw "need input in JSON-format";
     }
     else {
         myNewTree = JSON.parse(inputText);
@@ -103,4 +96,6 @@ function showTextFromNav2(inputText) {
     var myAddin2 = document.getElementById("controlAddIn");
     myAddin2.innerHTML = inputText;
 }
+// @ts-ignore: NAV Invoke
+Microsoft.Dynamics.NAV.InvokeExtensibilityMethod('ScriptLoaded');
 //# sourceMappingURL=main.js.map
