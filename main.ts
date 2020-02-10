@@ -6,8 +6,8 @@ interface MyTree {
 }
 let myNumber = 0;
 //hier gehts los
-function myRun() {        
-    setTreeControl('');
+function myRun(inputText : string) {        
+    setTreeControl(inputText);
     
     let toggler = document.getElementsByClassName("caret") as HTMLCollectionOf<HTMLSpanElement>;
     let i : number =  0;
