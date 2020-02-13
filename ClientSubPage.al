@@ -4,7 +4,8 @@ page 50101 MyClientSubPage
     ApplicationArea = All;
     UsageCategory = Lists;
     SourceTable = "KM Client";
-    SourceTableTemporary = true;
+    CardPageId = "KM Client Card";
+    DeleteAllowed = false;
 
     layout
     {
